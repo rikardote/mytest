@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Test extends Component
 {
-    public $name = "Hector";
+    public $name = "HECTOR RICARDO FUENTES ARMENTA";
 
     public function render()
     {
