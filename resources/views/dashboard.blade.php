@@ -5,7 +5,7 @@
 
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 border-b border-gray-200">
-            {{ __('You are logged in!') }}
+            @livewire('tall-crud-generator')
         </div>
     </div>
 </x-app-layout>

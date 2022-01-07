@@ -1,12 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Users') }}
+        {{ __('Departments') }}
     </x-slot>
 
     <div class="inline-block overflow-hidden min-w-full rounded-lg shadow">
 
-        @livewire('usuarios')
         
+
+        @livewire('departments')
+
     </div>
 
 </x-app-layout>
