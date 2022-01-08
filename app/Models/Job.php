@@ -11,4 +11,9 @@ class Job extends Model
 
     protected $fillable = ['name'];
 
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
 }

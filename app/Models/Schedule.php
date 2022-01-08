@@ -10,4 +10,9 @@ class Schedule extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
 }
