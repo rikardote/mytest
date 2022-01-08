@@ -1,4 +1,5 @@
 require('./bootstrap');
+require("flatpickr");
 
 import Alpine from 'alpinejs';
 
