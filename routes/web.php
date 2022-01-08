@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('employees', [\App\Http\Controllers\EmployeeController::class, 'index'])->name('employees.index');
     Route::get('departments', [\App\Http\Controllers\DepartmentController::class, 'index'])->name('departments.index');
     Route::get('incidencias', [\App\Http\Controllers\IncidenciaController::class, 'index'])->name('incidencias.index');
     Route::get('jobs', [\App\Http\Controllers\JobController::class, 'index'])->name('jobs.index');

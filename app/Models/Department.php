@@ -19,8 +19,5 @@ class Department extends Model
         return str_pad($value, 5, '0', STR_PAD_LEFT);
     }
 
-    public function employee()
-    {
-        return $this->belongsTo(Employee::class);
-    }
+
 }

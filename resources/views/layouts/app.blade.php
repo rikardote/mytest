@@ -9,13 +9,18 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+
+
         @livewireStyles
+          <!-- Scripts -->
+          <script src="{{ asset('js/app.js') }}" defer></script>
+          <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     </head>
     <body>
         <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
@@ -36,5 +41,6 @@
             </div>
         </div>
         @livewireScripts
+        @stack('js')
     </body>
 </html>
