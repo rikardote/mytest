@@ -43,7 +43,7 @@
             </div>
             <div class="mt-4">
                 <x:tall-crud-generator::label>Fecha Ingreso</x:tall-crud-generator::label>
-                <x:tall-crud-generator::input class="block mt-1 w-1/2" type="date" wire:model.defer="item.fecha_ingreso" />
+                <x-datepicker id="item.fecha_ingreso" wire:model.lazy="item.fecha_ingreso" class="block mt-1 w-1/2"/>
                 @error('item.fecha_ingreso') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
             </div>
 

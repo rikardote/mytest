@@ -1,5 +1,5 @@
 @props([
-    'options' => "{dateFormat:'d-m-Y', locale:'es', altInput:false, enableTime:false }",
+    'options' => "{dateFormat:'d/m/Y', locale:'es', altInput:false, enableTime:false }",
 ])
 
 <div wire:ignore>

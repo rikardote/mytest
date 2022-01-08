@@ -21,6 +21,7 @@
           <!-- Scripts -->
           <script src="{{ asset('js/app.js') }}" defer></script>
           <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+          <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
     </head>
     <body>
         <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">

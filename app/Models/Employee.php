@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Employee extends Model
 {
@@ -22,8 +23,12 @@ class Employee extends Model
     ];
 
     protected $casts = [
-        'fecha_ingreso'  => 'date:Y-m-d',
+        'fecha_ingreso'  => 'date:d/m/Y',
     ];
+
+    public function setFechaIngresoAttribute( $value ) {
+        $this->attributes['fecha_ingreso'] = (new Carbon($value))->format('Y-m-d');
+      }
 
     public function department()
     {
