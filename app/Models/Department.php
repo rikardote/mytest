@@ -23,5 +23,10 @@ class Department extends Model
         return "{$this->code} - {$this->description}";
     }
 
+    public function setDescriptionAttribute($value)
+    {
+        $this->attributes['description'] = strtoupper($value);
+    }
+
 
 }

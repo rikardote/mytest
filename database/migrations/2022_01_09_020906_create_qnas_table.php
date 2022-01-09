@@ -17,6 +17,7 @@ class CreateQnasTable extends Migration
             $table->id();
             $table->integer('qna');
             $table->integer('year');
+            $table->string('description');
             $table->boolean('active');
             $table->timestamps();
         });

@@ -31,6 +31,11 @@
                 <x:tall-crud-generator::input class="block mt-1 w-1/2" type="text" wire:model.defer="item.year" />
                 @error('item.year') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
             </div>
+            <div class="mt-4">
+                <x:tall-crud-generator::label>Descripcion</x:tall-crud-generator::label>
+                <x:tall-crud-generator::input class="block mt-1 w-1/2" type="text" wire:model.defer="item.description" />
+                @error('item.description') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
+            </div>
             <x:tall-crud-generator::checkbox-wrapper class="mt-4">
                 <x:tall-crud-generator::label>Active:</x:tall-crud-generator::label><x:tall-crud-generator::checkbox class="ml-2" wire:model.defer="item.active" />
             </x:tall-crud-generator::checkbox-wrapper>
@@ -58,6 +63,11 @@
                 <x:tall-crud-generator::label>Year</x:tall-crud-generator::label>
                 <x:tall-crud-generator::input class="block mt-1 w-1/2" type="text" wire:model.defer="item.year" />
                 @error('item.year') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
+            </div>
+            <div class="mt-4">
+                <x:tall-crud-generator::label>Descripcion</x:tall-crud-generator::label>
+                <x:tall-crud-generator::input class="block mt-1 w-1/2" type="text" wire:model.defer="item.description" />
+                @error('item.description') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
             </div>
             <x:tall-crud-generator::checkbox-wrapper class="mt-4">
                 <x:tall-crud-generator::label>Active:</x:tall-crud-generator::label><x:tall-crud-generator::checkbox class="ml-2" wire:model.defer="item.active" />

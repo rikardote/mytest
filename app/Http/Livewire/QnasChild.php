@@ -26,6 +26,7 @@ class QnasChild extends Component
     protected $rules = [
         'item.qna' => 'required|numeric',
         'item.year' => 'required|numeric',
+        'item.description' => 'required',
         'item.active' => '',
     ];
 
@@ -35,6 +36,7 @@ class QnasChild extends Component
     protected $validationAttributes = [
         'item.qna' => 'Qna',
         'item.year' => 'Year',
+        'item.description' => 'Description',
         'item.active' => 'Active',
     ];
 
@@ -78,7 +80,7 @@ class QnasChild extends Component
         $this->emitTo('qnas', 'refresh');
         $this->emitTo('livewire-toast', 'show', 'Record Deleted Successfully');
     }
- 
+
     public function showCreateForm(): void
     {
         $this->confirmingItemCreation = true;
@@ -90,15 +92,16 @@ class QnasChild extends Component
     {
         $this->validate();
         $item = Qna::create([
-            'qna' => $this->item['qna'] ?? '', 
-            'year' => $this->item['year'] ?? '', 
-            'active' => $this->item['active'] ?? 0, 
+            'qna' => $this->item['qna'] ?? '',
+            'year' => $this->item['year'] ?? '',
+            'description' => $this->item['description'] ?? '',
+            'active' => $this->item['active'] ?? 0,
         ]);
         $this->confirmingItemCreation = false;
         $this->emitTo('qnas', 'refresh');
         $this->emitTo('livewire-toast', 'show', 'Record Added Successfully');
     }
- 
+
     public function showEditForm(Qna $qna): void
     {
         $this->resetErrorBag();
