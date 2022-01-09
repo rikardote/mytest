@@ -27,8 +27,24 @@ class Employee extends Model
     ];
 
     public function setFechaIngresoAttribute( $value ) {
-        $this->attributes['fecha_ingreso'] = (new Carbon($value))->format('Y-m-d');
-      }
+        $this->attributes['fecha_ingreso'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d');
+    }
+
+    public function getFullNameAttribute(){
+        return "{$this->name} {$this->first_lastname} {$this->second_lastname}";    }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtoupper($value);
+    }
+    public function setFirstLastNameAttribute($value)
+    {
+        $this->attributes['first_lastname'] = strtoupper($value);
+    }
+    public function setSecondLastnameAttribute($value)
+    {
+        $this->attributes['second_lastname'] = strtoupper($value);
+    }
 
     public function department()
     {
@@ -48,5 +64,10 @@ class Employee extends Model
     public function schedule()
     {
         return $this->belongsTo(Schedule::class);
+    }
+
+    public function getNumEmpleadoAttribute($value)
+    {
+        return str_pad($value, 6, '0', STR_PAD_LEFT);
     }
 }
