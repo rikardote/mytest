@@ -19,5 +19,9 @@ class Department extends Model
         return str_pad($value, 5, '0', STR_PAD_LEFT);
     }
 
+    public function getFullnameAttribute(){
+        return "{$this->code} - {$this->description}";
+    }
+
 
 }

@@ -27,12 +27,15 @@ Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('capture', [\App\Http\Controllers\CaptureController::class, 'index'])->name('captures.index');
     Route::get('employees', [\App\Http\Controllers\EmployeeController::class, 'index'])->name('employees.index');
     Route::get('departments', [\App\Http\Controllers\DepartmentController::class, 'index'])->name('departments.index');
     Route::get('incidencias', [\App\Http\Controllers\IncidenciaController::class, 'index'])->name('incidencias.index');
     Route::get('jobs', [\App\Http\Controllers\JobController::class, 'index'])->name('jobs.index');
     Route::get('schedules', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('schedules.index');
     Route::get('conditions', [\App\Http\Controllers\ConditionController::class, 'index'])->name('conditions.index');
+    Route::get('periodos', [\App\Http\Controllers\PeriodoController::class, 'index'])->name('periodos.index');
+    Route::get('qnas', [\App\Http\Controllers\QnaController::class, 'index'])->name('qnas.index');
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 });

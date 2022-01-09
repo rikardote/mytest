@@ -24,15 +24,9 @@
                 </x:tall-crud-generator::select>
             </div>
         </div>
-        <table class="w-full whitespace-no-wrap mt-4 shadow-2xl" wire:loading.class.delay="opacity-50">
+        <table class="w-full hover:border-collapse  whitespace-no-wrap mt-4 shadow-2xl" wire:loading.class.delay="opacity-50">
             <thead>
-                <tr class="text-left font-bold bg-blue-400">
-                <td class="px-3 py-2" >
-                    <div class="flex items-center">
-                        <button wire:click="sortBy('id')">Id</button>
-                        <x:tall-crud-generator::sort-icon sortField="id" :sort-by="$sortBy" :sort-asc="$sortAsc" />
-                    </div>
-                </td>
+                <tr class="text-left  font-bold bg-blue-400">
                 <td class="px-3 py-2" >
                     <div class="flex items-center">
                         <button wire:click="sortBy('num_empleado')">Num Empleado</button>
@@ -68,7 +62,6 @@
             <tbody class="divide-y divide-blue-400">
             @foreach($results as $result)
                 <tr class="hover:bg-blue-300 {{ ($loop->even ) ? "bg-blue-100" : ""}}">
-                    <td class="px-3 py-2" >{{ $result->id}}</td>
                     <td class="px-3 py-2" >{{ $result->num_empleado}}</td>
                     <td class="px-3 py-2" >{{ $result->name}}</td>
                     <td class="px-3 py-2" >{{ $result->first_lastname}}</td>

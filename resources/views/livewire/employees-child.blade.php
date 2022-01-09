@@ -53,7 +53,7 @@
                     <x:tall-crud-generator::select class="block mt-1 w-full" wire:model.defer="item.department_id">
                         <option value="">Please Select</option>
                         @foreach($departments as $c)
-                        <option value="{{$c->id}}">{{$c->code}}</option>
+                        <option value="{{$c->id}}">{{$c->fullname}}</option>
                         @endforeach
                     </x:tall-crud-generator::select>
                     @error('item.department_id') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
@@ -147,7 +147,7 @@
                     <x:tall-crud-generator::select class="block mt-1 w-full" wire:model.defer="item.department_id">
                         <option value="">Please Select</option>
                         @foreach($departments as $c)
-                        <option value="{{$c->id}}">{{$c->code}}</option>
+                        <option value="{{$c->id}}">{{$c->fullname}}</option>
                         @endforeach
                     </x:tall-crud-generator::select>
                     @error('item.department_id') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
