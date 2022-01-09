@@ -67,7 +67,7 @@
                     <x:tall-crud-generator::select class="block mt-1 w-full" wire:model.defer="item.qna_id">
                         <option value="">Please Select</option>
                         @foreach($qnas as $c)
-                        <option value="{{$c->id}}">{{$c->description}}</option>
+                        <option value="{{$c->id}}">{{$c->joinname}} - {{$c->description}} </option>
                         @endforeach
                     </x:tall-crud-generator::select>
                     @error('item.qna_id') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror
@@ -146,7 +146,7 @@
                     <x:tall-crud-generator::select class="block mt-1 w-full" wire:model.defer="item.qna_id">
                         <option value="">Please Select</option>
                         @foreach($qnas as $c)
-                        <option value="{{$c->id}}">{{$c->description}}</option>
+                        <option value="{{$c->id}}">{{$c->joinname}} - {{$c->description}} </option>
                         @endforeach
                     </x:tall-crud-generator::select>
                     @error('item.qna_id') <x:tall-crud-generator::error-message>{{$message}}</x:tall-crud-generator::error-message> @enderror

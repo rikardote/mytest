@@ -11,7 +11,7 @@ class Qna extends Model
 
     protected $fillable = ['qna','year','description', 'active'];
 
-    public function getDescriptionAttribute(){
+    public function getJoinNameAttribute(){
         return " {$this->qna}/{$this->year} ";
     }
 

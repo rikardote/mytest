@@ -36,7 +36,7 @@
             <tbody class="divide-y divide-blue-400">
             @foreach($results as $result)
                 <tr class="hover:bg-blue-300">
-                    <td class="px-3 py-2" >{{ $result->qna?->description}}</td>
+                    <td class="px-3 py-2" >{{ $result->qna?->joinname}}</td>
                     <td class="px-3 py-2" >{{ $result->employee?->num_empleado}}</td>
                     <td class="px-3 py-2" >{{ $result->employee?->fullname}}</td>
                     <td class="px-3 py-2" >{{ $result->incidencia?->code}}</td>
