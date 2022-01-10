@@ -34,19 +34,15 @@
             </thead>
             <tbody class="divide-y divide-blue-400">
             @foreach($results as $result)
-                <tr class="{{ ($loop->even ) ? "bg-blue-100" : ""}}">
+                <tr >
                     <td class="px-3 py-2" >{{ $result->qna}}</td>
                     <td class="px-3 py-2" >{{ $result->year}}</td>
                     <td class="px-3 py-2" >{{ $result->description}}</td>
-                    <!-- <td class="px-3 py-2" >{{ $result->active}}</td> -->
-
                     <td class="px-3 py-2" >
-
-                      @livewire('buttons.toggle-button', [
-                          'model' => $result,
-                          'field' => 'active',
-                          'key' =>  $result,
-                      ])
+                      <livewire:buttons.toggle-button
+                        :model="$result"
+                        field="active"
+                        key="{{ $result->id }}"/>
                     </td>
                     <td class="px-3 py-2" >
                         <button type="submit" wire:click="$emitTo('qnas-child', 'showEditForm', {{ $result->id}});" class="text-green-500">
