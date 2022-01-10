@@ -19,4 +19,9 @@ class Qna extends Model
     {
         $this->attributes['description'] = strtoupper($value);
     }
+
+    public function getQnaAttribute($value)
+    {
+        return str_pad($value, 2, '0', STR_PAD_LEFT);
+    }
 }

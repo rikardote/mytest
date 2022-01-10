@@ -27,16 +27,22 @@
 
                 <td class="px-3 py-2" >Qna</td>
                 <td class="px-3 py-2" >Year</td>
+                <td class="px-3 py-2" >Descripcion</td>
                 <td class="px-3 py-2" >Active</td>
                 <td class="px-3 py-2" >Actions</td>
                 </tr>
             </thead>
             <tbody class="divide-y divide-blue-400">
             @foreach($results as $result)
-                <tr class="hover:bg-blue-300 {{ ($loop->even ) ? "bg-blue-100" : ""}}">
+                <tr class="{{ ($loop->even ) ? "bg-blue-100" : ""}}">
                     <td class="px-3 py-2" >{{ $result->qna}}</td>
                     <td class="px-3 py-2" >{{ $result->year}}</td>
-                    <td class="px-3 py-2" >{{ $result->active}}</td>
+                    <td class="px-3 py-2" >{{ $result->description}}</td>
+                    <!-- <td class="px-3 py-2" >{{ $result->active}}</td> -->
+
+                    <td class="px-3 py-2" >
+                       <livewire:buttons.featured :qna="$result" :name="'active'" :key="'active'.$result->id" />
+                    </td>
                     <td class="px-3 py-2" >
                         <button type="submit" wire:click="$emitTo('qnas-child', 'showEditForm', {{ $result->id}});" class="text-green-500">
                             <x:tall-crud-generator::icon-edit />
