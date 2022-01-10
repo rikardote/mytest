@@ -41,7 +41,12 @@
                     <!-- <td class="px-3 py-2" >{{ $result->active}}</td> -->
 
                     <td class="px-3 py-2" >
-                       <livewire:buttons.featured :qna="$result" :name="'active'" :key="'active'.$result->id" />
+
+                      @livewire('buttons.toggle-button', [
+                          'model' => $result,
+                          'field' => 'active',
+                          'key' =>  $result,
+                      ])
                     </td>
                     <td class="px-3 py-2" >
                         <button type="submit" wire:click="$emitTo('qnas-child', 'showEditForm', {{ $result->id}});" class="text-green-500">
@@ -62,4 +67,5 @@
     </div>
     @livewire('qnas-child')
     @livewire('livewire-toast')
+
 </div>
